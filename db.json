@@ -1,0 +1,39 @@
+{
+    "clients" : [
+        {
+          "id": 1,
+          "name": "Juan",
+          "contact": 102013313,
+          "email": "juan@juan.com",
+          "company": "Codigo Con Juan"
+        },
+        {
+          "id": 2,
+          "name": "Karen",
+          "contact": 138198313,
+          "email": "karen@juan.com",
+          "company": "Codigo Con Juan"
+        },
+        {
+          "id": 3,
+          "name": "Josue",
+          "contact": 31983913,
+          "email": "josue@juan.com",
+          "company": "Codigo Con Juan"
+        },
+        {
+          "id": 4,
+          "name": "Miguel",
+          "contact": 319381983,
+          "email": "miguel@juan.com",
+          "company": "Codigo Con Juan"
+        },
+        {
+          "id": 5,
+          "name": "Pedro",
+          "contact": 1398198938,
+          "email": "pedro@juan.com",
+          "company": "Codigo Con Juan"
+        }
+    ]
+}
