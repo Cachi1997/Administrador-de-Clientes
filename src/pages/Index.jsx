@@ -1,10 +1,10 @@
 import { useLoaderData } from "react-router-dom"
 import Client from "../components/Client"
-import { obtenerClientes } from "../data/clients"
+import { getClients } from "../data/clients"
 
 //This function executes when the component loads
 export function loader(){
-  const clients = obtenerClientes()
+  const clients = getClients()
   return clients
 }
 

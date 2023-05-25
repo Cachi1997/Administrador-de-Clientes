@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unknown-property */
-/* eslint-disable no-unused-vars */
 const CustomForm = ({client}) => {
   return (
     <>
@@ -14,12 +13,13 @@ const CustomForm = ({client}) => {
           className="mt-2 block w-full p-3 bg-gray-50"
           placeholder="Client Name"
           name="name"
+          defaultValue={client?.name}
         />
       </div>
       <div className="mb-4">
         <label
           className="text-gray-800"
-          htmlFor="compaby"
+          htmlFor="company"
         >Company:</label>
         <input 
           id="company"
@@ -27,6 +27,7 @@ const CustomForm = ({client}) => {
           className="mt-2 block w-full p-3 bg-gray-50"
           placeholder="Client Company"
           name="company"
+          defaultValue={client?.company}
         />
       </div>
 
@@ -41,6 +42,7 @@ const CustomForm = ({client}) => {
           className="mt-2 block w-full p-3 bg-gray-50"
           placeholder="Client Email"
           name="email"
+          defaultValue={client?.email}
         />
       </div>
 
@@ -55,6 +57,7 @@ const CustomForm = ({client}) => {
           className="mt-2 block w-full p-3 bg-gray-50"
           placeholder="Client Contact"
           name="contact"
+          defaultValue={client?.contact}
         />
       </div>
 
@@ -70,6 +73,7 @@ const CustomForm = ({client}) => {
           className="mt-2 block w-full p-3 bg-gray-50 h-40 align-self"
           placeholder="Client Notes"
           name="notes"
+          defaultValue={client?.notes}
         />
       </div>
     </>

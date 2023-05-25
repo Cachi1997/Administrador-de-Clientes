@@ -1,11 +1,22 @@
-import { useNavigate, Form, useActionData, redirect } from "react-router-dom"
+import { getClient } from "../data/clients"
 import CustomForm from "../components/CustomForm"
+import { Form, useNavigate, useLoaderData, useActionData, redirect } from "react-router-dom"
+import { editClient } from "../data/clients"
 import Error from "../components/Error"
-import { addClient } from "../data/clients"
 
+export async function loader({params}){
+  const client = await getClient(params.clientId)
+  if(Object.values(client).length === 0){
+    throw new Response ("", {
+      status: 404,
+      statusText: "No results"
+    })
+  }
+  
+  return client
+}
 
-//This is another way of handle a submit
-export async function action({request}){
+export async function action({request, params}){
   const formData = await request.formData()
   const data = Object.fromEntries(formData)
 
@@ -28,20 +39,20 @@ export async function action({request}){
     return errors
   }
 
-  await addClient(data)
-
+  await editClient(params.clientId, data)
   return redirect("/")
 }
 
-function NewClient() {
+function EditClient() {
 
-  const errors = useActionData()
   const navigate = useNavigate()
+  const client = useLoaderData()
+  const errors = useActionData()
 
   return (
     <>
-      <h1 className="font-black text-4xl text-blue-900">New Client</h1>
-      <p className="mt-3">Fill all the blank spaces to add a client</p>
+      <h1 className="font-black text-4xl text-blue-900">Edit Client</h1>
+      <p className="mt-3">You can modify the client info here..</p>
 
       <div className="flex justify-end">
         <button
@@ -60,11 +71,13 @@ function NewClient() {
           method="post"
           noValidate//Deactivate html5 validation
         >
-          <CustomForm />
+          <CustomForm 
+            client={client}
+          />
           <input 
             type="submit"
             className="mt-5 w-full bg-blue-800 text-white p-3 uppercase font-bold text-lg hover:cursor-pointer"
-            value="Add Client"
+            value="Save Change"
           />
         </Form>
       </div>
@@ -72,4 +85,4 @@ function NewClient() {
   )
 }
 
-export default NewClient
+export default EditClient
