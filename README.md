@@ -1,15 +1,29 @@
+# Administrador de Clientes
+
 Este proyecto simula una agenda de clientes de una empresa. 
 
 Permite almacenar datos de clientes (Nombre, Apellido, Empresa, email)
 
 Utiliza tecnologias como Tailwind CSS, JSON-Server
 
-Modo de uso:
+## Instalacion 
 
-Ejecutar el comando 
+- Primero instalar el paquete 
 
-> json-server --watch db.json
+```sh
+npm i -g json-server
+```
 
-Luego
+- Despues ejecutar el siguiente comando
 
-> npm run dev
+```sh
+json-server --watch db.json
+```
+
+Por ultimo
+
+```sh
+npm run dev
+```
+
+Para mas info sobre json-server [click aqui] https://www.npmjs.com/package/json-server
