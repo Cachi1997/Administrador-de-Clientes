@@ -27,3 +27,11 @@ npm run dev
 ```
 
 Para mas info sobre json-server [click aqui] https://www.npmjs.com/package/json-server
+
+### Posibles errores
+
+Puede que al ejecutar el comando "json-server --watch db.json" entre en conflicto con las politicas de privacidad de tu sistema, pero esto se soluciona simplemente ejecutandolo de la siguiente forma:
+
+```sh
+npx json-server --watch db.json
+```
