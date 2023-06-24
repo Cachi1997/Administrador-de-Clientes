@@ -26,7 +26,7 @@ Por ultimo
 npm run dev
 ```
 
-Para mas info sobre json-server [click aqui] https://www.npmjs.com/package/json-server
+Para mas info sobre json-server [click aqui] (https://www.npmjs.com/package/json-server)
 
 ### Posibles errores
 
